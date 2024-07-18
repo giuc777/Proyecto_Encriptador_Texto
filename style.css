@@ -281,7 +281,7 @@
 
 .LightTheme{
     background-color: var(--main-Color-Theme-Light);
-    font-weight: 50;
+    
 }
 
 .LightTheme .moon{
@@ -298,7 +298,8 @@
     border:2px solid var(--quaternary-Color-Theme-Light);
 }
 .LightTheme .titleGeneral {
-    color: var(--primary-lettre-Theme-Light)
+    color: var(--primary-lettre-Theme-Light);
+    font-weight: 50;
 }
 
 .LightTheme .menuTitle{
@@ -422,7 +423,7 @@
     
     .DarkTheme .notSelected {
         background-color: var(--color-backgroud-menu-Dark); /* Color para los botones deshabilitados */
-        color: var(--main-Color-Theme-Dark); /* Color del texto para los botones deshabilitados */
+        color: var(--color-background-botons-Dark); /* Color del texto para los botones deshabilitados */
         border: none;
     
     }
