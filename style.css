@@ -1,0 +1,449 @@
+/* Variables de CSS Dark Color*/
+:root{
+    --main-Color-Theme-Dark: black;
+    --color-title-Theme-Darck: #E5E5E5;
+    --color-backgroud-menu-Dark: #161a1d;
+    --color-background-botons-Dark:#fca311;
+    --secondary-color-Theme-Dark: #505e69;
+    --Primary-Letre:  'Lato', sans-serif;
+    --font-size-One: 2rem;
+    --font-size-Two: 1.5rem;
+    --font-size-Three: 1.6rem;
+    --Secondary-Letre:  'Roboto', sans-serif;;
+}
+/* Variables de CSS Light Color*/
+:root{
+    --main-Color-Theme-Light: #a8dadc;
+    --secondary-Color-Theme-Light: white;
+    --tertiary-Color-Theme-Light: #c2f8ff;
+    --quaternary-Color-Theme-Light:#71c1e8;
+    --sencodary-lettre-Theme-Light: #14213e;
+    --primary-lettre-Theme-Light: #d93642;
+    --clook-color: #7c7c7c;
+
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* configuraciones Generales */
+.titleGeneral{
+    font-family: var(--Primary-Letre);
+    text-align: center;
+    font-size: 2.5rem;
+    padding-block-end: 20px;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-around;
+    margin-block-end: 10px;
+}
+
+.MenuEncriptation{
+    border-radius: 30px;
+    padding: 5px;
+    height: auto;
+    font-family: var(--Secondary-Letre);
+    font-size: var(--font-size-One);
+    padding-inline-start: 75px;
+    padding-inline-end: 75px;
+    padding-block-start: 10px;
+    padding-block-end: 10px;    
+}
+
+.menuMetods{
+    display: flex;
+    gap: 5px;
+    list-style: none;
+}
+
+.invisible{
+    display: none;
+}
+
+.menuMetods li button{
+    font-size: var(--font-size-One);
+
+    background-color: var(--color-background-botons-Dark); /* Color de fondo de los botones */
+    font-size: var(--font-size-Two);
+    padding: 20px 25px; /* Padding interno de los botones */
+    color: white; /* Color del texto en los botones */
+
+    cursor: pointer; /* Cambia el cursor a pointer cuando pasa por el botón */
+    
+    
+}
+
+.textWait{
+    font-family: var(--Secondary-Letre);
+}
+
+
+.menuTitleMetods{
+    font-size: 1.5rem;
+    padding: 20px;
+}
+
+.sectionGeneral{
+    padding-block-start: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.sectionGeneral .userToWrite form{
+    display: flex;
+    flex-direction: column; /* Organiza los hijos en una columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    gap: 10px; /* Espacio entre los elementos */
+}
+
+.toWrite{
+    width: 150%; /* Ancho del campo de texto */
+    height: 40vh;
+    padding: 10px; /* Padding interno del campo de texto */
+    font-size: var(--font-size-Three);/* Tamaño de la fuente del campo de texto */
+    border-radius: 20px;
+    border: none;
+}
+
+.optionsToUser{
+    display: flex;
+    gap: 20px;
+}
+
+.optionsToUser input{
+    cursor: pointer;
+    font-size: var(--font-size-Two);
+    padding: 5px;
+    border: none;
+}
+
+.resultDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resultDiv span{
+    padding-block-start: 10px;
+    font-size: var(--font-size-One);
+}
+.resultDiv svg{
+    height: 50vh;
+    width: 50vh;
+}
+
+.danger{
+    font-family: var(--Secondary-Letre);
+    font-size: var(--font-size-One);
+    
+}
+
+.TextResult{
+    font-size: var(--font-size-One);
+    font-family: var(--Primary-Letre);
+    display: inline-block;
+    width: 50vh;
+}
+
+.img-Copy{
+    width: 10vh;
+    cursor: pointer;
+}
+
+.container-btn-mode{
+    position: absolute;
+    top:20px;
+    right: 30px;
+    cursor: pointer;
+    z-index: 2;
+    font-size:0;
+  }
+  .btn-mode{
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    
+    transition: background-color .5s;
+  }
+  .btn-mode i {
+    display: block;
+    font-size: 17px;
+    text-align: center;
+    line-height: 30px;
+  }
+  .btn-mode.sun{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-right: 1px solid transparent;
+  }
+  .btn-mode.moon{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  
+/* Configuracion con tema Dark */
+
+.DarkTheme{
+    background-color: var(--main-Color-Theme-Dark);
+}
+
+.DarkTheme .moon{
+    background-color: var(--main-Color-Theme-Dark);
+    color: var(--color-background-botons-Dark);
+  }
+
+.DarkTheme .sun{
+    
+    background-color: var(--main-Color-Theme-Light); 
+}
+
+.DarkTheme .titleGeneral{
+    color: var(--color-title-Theme-Darck);
+}
+.DarkTheme .btn-mode{
+    border:2px solid var(--color-backgroud-menu-Dark);
+}
+.DarkTheme .menuMetods li button{
+    box-shadow: 0 0 0 5px var(--color-backgroud-menu-Dark); /* Simula el padding con color */
+}
+
+.DarkTheme .menuTitle{
+    color: var(--color-title-Theme-Darck);   
+}
+.DarkTheme .menuTitleMetods{
+    color: beige;
+    background-color: #161a1d;
+
+}
+.DarkTheme .MenuEncriptation{
+    background-color: var(--color-backgroud-menu-Dark);
+}
+.DarkTheme .textWait{
+    color: var(--color-title-Theme-Darck);
+}
+
+.DarkTheme .isSelected {
+    background-color: var(--secondary-color-Theme-Dark); /* Ejemplo de color para botón seleccionado */
+    color: var(--main-Color-Theme-Dark); /* Color del texto para botón seleccionado */
+    border: none;
+}
+
+.DarkTheme .notSelected {
+    background-color: var(--main-Color-Theme-Dark); /* Color para los botones deshabilitados */
+    color: var(--color-title-Theme-Darck); /* Color del texto para los botones deshabilitados */
+    border: none;
+
+}
+
+.DarkTheme .toWrite{
+    background-color: var(--color-background-botons-Dark);
+}
+
+.DarkTheme ::-webkit-input-placeholder {
+    color: var(--color-title-Theme-Darck);
+}
+
+.DarkTheme :-ms-input-placeholder {
+    color: var(--color-title-Theme-Darck);
+}
+.DarkTheme .optionsToUser input{
+    color: var(--color-background-botons-Dark);
+    background-color: var(--main-Color-Theme-Dark);
+    
+}
+
+.DarkTheme .optionsToUser input:hover {
+    border: 1px var(--color-backgroud-menu-Dark) solid;
+    border-radius: 10px;
+}
+
+.DarkTheme .color-change{
+    fill: var(--color-background-botons-Dark);
+}
+
+.DarkTheme .danger{
+    color: var(--color-title-Theme-Darck);
+}
+
+.DarkTheme .TextResult {
+    padding-block-end: 50px;
+    color: var(--color-title-Theme-Darck);
+}
+
+/* Configuracion tema Light */
+
+
+.LightTheme{
+    background-color: var(--main-Color-Theme-Light);
+    font-weight: 50;
+}
+
+.LightTheme .moon{
+    color: var(--secondary-Color-Theme-Light);
+    background-color: var(--main-Color-Theme-Dark);
+}
+
+.LightTheme .sun{
+    
+   color: var(--sencodary-lettre-Theme-Light);
+}
+
+.LightTheme .btn-mode{
+    border:2px solid var(--quaternary-Color-Theme-Light);
+}
+.LightTheme .titleGeneral {
+    color: var(--primary-lettre-Theme-Light)
+}
+
+.LightTheme .menuTitle{
+    color: var(--sencodary-lettre-Theme-Light);
+}
+
+.LightTheme .menuTitleMetods{
+    color: var(--sencodary-lettre-Theme-Light);
+    background-color: var(--tertiary-Color-Theme-Light);
+
+}
+.LightTheme .MenuEncriptation{
+    background-color: var(--tertiary-Color-Theme-Light);
+}
+.LightTheme .textWait{
+    color: var(--primary-lettre-Theme-Light);
+}
+
+.LightTheme .isSelected {
+    background-color: var(--quaternary-Color-Theme-Light); /* Ejemplo de color para botón seleccionado */
+    color: var(--sencodary-lettre-Theme-Light); /* Color del texto para botón seleccionado */
+    border: none !important;
+    
+}
+
+.LightTheme .notSelected {
+    background-color: var(--main-Color-Theme-Light); /* Color para los botones deshabilitados */
+    color: var(--sencodary-lettre-Theme-Light); /* Color del texto para los botones deshabilitados */  
+    border: none;  
+}
+
+
+.LightTheme .toWrite{
+    background-color: var(--secondary-Color-Theme-Light);
+    color: var(--sencodary-lettre-Theme-Light)
+}
+
+.LightTheme ::-webkit-input-placeholder {
+    color: var(--primary-lettre-Theme-Light);
+}
+
+.LightTheme :-ms-input-placeholder {
+    color: var(--primary-lettre-Theme-Light);
+}
+.LightTheme .optionsToUser input{
+    color: var(--primary-lettre-Theme-Light);
+    background-color: var(--main-Color-Theme-Light);
+    
+}
+
+.LightTheme .optionsToUser input:hover {
+    border: 1px var(--quaternary-Color-Theme-Light) solid;
+    border-radius: 10px;
+}
+
+.LightTheme .color-change{
+    fill: var(--clook-color);
+}
+
+.LightTheme .danger{
+    color:  var(--sencodary-lettre-Theme-Light);
+}
+
+.LightTheme .TextResult {
+    padding-block-end: 50px;
+    color:var(--sencodary-lettre-Theme-Light)
+}
+
+
+/* Configuracion responsive Tablets */
+:root{
+    --font-size-One-R1: 1.5rem;
+    --font-size-Two-R1: 1rem;
+    --font-size-Three-R1: 1.3rem;
+}
+
+
+
+@media (max-width: 1000px){
+    .toWrite{
+        width: 110%; /* Ancho del campo de texto */
+    
+    }
+}
+
+@media (max-width: 768px){
+    .titleGeneral{
+        font-size: 2rem;
+    }
+    .MenuEncriptation{
+        padding-inline-start: 15px;
+        padding-inline-end: 15px;
+
+    }
+    .menuMetods{
+        flex-direction: column;
+        
+    }
+    .menuMetods li button{
+        font-size: var(--font-size-One);
+        font-size: var(--font-size-One-R1);
+        width: 200px;
+        padding: 20px 25px; /* Padding interno de los botones */
+        color: white; /* Color del texto en los botones */
+        cursor: pointer; /* Cambia el cursor a pointer cuando pasa por el botón */
+        border-radius: 5px;
+        margin: 0;
+    }
+    .sectionGeneral {
+        flex-direction: column;
+        align-items: center;
+    }
+    .userToWrite {
+        margin-bottom: 10px;
+    }
+    .DarkTheme .isSelected {
+        background-color: var(--secondary-color-Theme-Dark); /* Ejemplo de color para botón seleccionado */
+       
+        border: none;
+    }
+    
+    .DarkTheme .notSelected {
+        background-color: var(--color-backgroud-menu-Dark); /* Color para los botones deshabilitados */
+        color: var(--main-Color-Theme-Dark); /* Color del texto para los botones deshabilitados */
+        border: none;
+    
+    }
+    .toWrite{
+        width: 75%; /* Ancho del campo de texto */
+        height: 40vh;
+        padding: 10px; /* Padding interno del campo de texto */
+        font-size: var(--font-size-Three);/* Tamaño de la fuente del campo de texto */
+        border-radius: 20px;
+        border: none;
+    }
+    .container-btn-mode{
+        position: absolute;
+        top:75px;
+        right: 10px;
+        cursor: pointer;
+        z-index: 2;
+        font-size:0;
+      }
+      .LightTheme .btn-mode{
+        border:2px solid var(--tertiary-Color-Theme-Light)
+    }
+    
+}
