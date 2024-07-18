@@ -26,7 +26,8 @@
             <div class="MenuEncriptation">
                 <ul class="menuMetods DarkTheme">
                     <li class="menuTitleMetods">Método:</li>
-                    <li class="menuMetodsOption"><button id="MetodCesar" onclick="metodEncriptar(1)" class="isSelected">César</button></li>
+                    <li class="menuMetodsOption"><button id="MetodOne" onclick="metodEncriptar(4)" class="isSelected" >One</button></li>
+                    <li class="menuMetodsOption"><button id="MetodCesar" onclick="metodEncriptar(1)" class="notSelected">César</button></li>
                     <li class="menuMetodsOption"><button id="MetodVigerene" onclick="metodEncriptar(2)" class="notSelected" >Vigenère</button></li>
                     <li class="menuMetodsOption"><button id="MetodXOR" onclick="metodEncriptar(3)" class="notSelected" >Gady</button></li>
                 </ul>
@@ -41,7 +42,7 @@
                         <input type="button" value="Encriptar" id="Encriptar" onclick="encriptar(1)">
                         <input type="button" value="Desencriptar" id="Desencriptar" onclick="encriptar(2)">
                     </div>
-                    <div ><span  id="textDanger" class="danger invisible"> No hay texto </span></div>
+                    <div id="EncriptDanger"></div>
                     
                 </form>
             </article>

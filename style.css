@@ -144,11 +144,20 @@
     
 }
 
+.danger_Caracters{
+    font-family: var(--Secondary-Letre);
+    font-size: var(--font-size-One-R1);
+    width: 100%;
+    word-wrap: break-word; /* Para navegadores más antiguos */
+    overflow-wrap: break-word; /* Para navegadores modernos */
+}
+
 .TextResult{
     font-size: var(--font-size-One);
     font-family: var(--Primary-Letre);
-    display: inline-block;
     width: 50vh;
+    word-wrap: break-word; /* Para navegadores más antiguos */
+    overflow-wrap: break-word; /* Para navegadores modernos */
 }
 
 .img-Copy{
@@ -271,6 +280,10 @@
     color: var(--color-title-Theme-Darck);
 }
 
+.DarkTheme .danger_Caracters{
+    color: var(--color-title-Theme-Darck);
+}
+
 .DarkTheme .TextResult {
     padding-block-end: 50px;
     color: var(--color-title-Theme-Darck);
@@ -362,6 +375,11 @@
 .LightTheme .danger{
     color:  var(--sencodary-lettre-Theme-Light);
 }
+
+.LightTheme .danger_Caracters{
+    color:  var(--sencodary-lettre-Theme-Light);
+}
+
 
 .LightTheme .TextResult {
     padding-block-end: 50px;

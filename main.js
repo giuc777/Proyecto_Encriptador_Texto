@@ -29,17 +29,41 @@ const result = document.getElementById("TextDesencriptado")
 const butonCesar = document.getElementById("MetodCesar")
 const butonVigerene = document.getElementById("MetodVigerene")
 const butonXOR = document.getElementById("MetodXOR");
+const butonOne = document.getElementById("MetodOne");
+const EncriptDanger = document.getElementById("EncriptDanger");
 
 let textEnriptedUser;
-let metodUse = 1;
+let metodUse = 4;
 
 //Funciones
 
+//Funcion para verificar que la cadena de texto es valida
+
+function validarTexto(texto) {
+    const regex = /^[a-z0-9 .,]*$/;
+    return regex.test(texto);
+}
+
+
+function aurtoencriptado(texto, option) {
+    let elementHTML = '<span  id="textDanger" class="danger"> No hay texto </span>'; 
+    texto== '' ? EncriptDanger.innerHTML = elementHTML
+    : option == 1 ? encriptarText(texto, 1) 
+    : encriptarText(texto, 2)
+}
+
 //Funcion generar de encriptar
 function encriptar(option){
-    userText.value == '' ? textDanger.classList.toggle('invisible')
-    : option == 1 ? encriptarText(userText.value, 1) 
-    : encriptarText(userText.value, 2)
+    ;
+    if(metodUse != 4){
+        aurtoencriptado(userText.value, option);
+        
+    }else{
+        let elementHTML = `<span  id="textDanger" class="danger_Caracters">
+        <p>no se permiten caracteres </br> especiales ni mayusculas</span>`
+        validarTexto(userText.value) ? aurtoencriptado(userText.value, option) 
+        : EncriptDanger.innerHTML = elementHTML;
+    }
 }
 
 
@@ -86,32 +110,48 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 //Funcion para Cambiar el metodo de encriptacion
 function metodEncriptar(option){
-    butonCesar.classList.remove('isSelected', 'notSelected');
-    butonVigerene.classList.remove('isSelected', 'notSelected');
-    butonXOR.classList.remove('isSelected', 'notSelected');
 
-    switch (option) {
-        case 1:
-            butonCesar.classList.add('isSelected') ;
-            butonVigerene.classList.add('notSelected'); 
-            butonXOR.classList.add('notSelected'); 
-            metodUse = 1;
-            break;
-        case 2:
-            butonVigerene.classList.add('isSelected') ;
-            butonCesar.classList.add('notSelected'); 
-            butonXOR.classList.add('notSelected'); 
-            metodUse = 2;
-            break;
-        case 3:
-            butonXOR.classList.add('isSelected');
-            butonCesar.classList.add('notSelected'); 
-            butonVigerene.classList.add('notSelected'); 
-            metodUse = 3;
-            break;
-        default:
-            break;
-    }
+    const regex = /^[a-zA-Z0-9 .,]*$/;
+
+    
+        butonCesar.classList.remove('isSelected', 'notSelected');
+        butonVigerene.classList.remove('isSelected', 'notSelected');
+        butonXOR.classList.remove('isSelected', 'notSelected');
+        butonOne.classList.remove('isSelected', 'notSelected');
+
+        switch (option) {
+            case 1:
+                butonCesar.classList.add('isSelected') ;
+                butonVigerene.classList.add('notSelected'); 
+                butonXOR.classList.add('notSelected'); 
+                butonOne.classList.add('notSelected');
+                metodUse = 1;
+                break;
+            case 2:
+                butonVigerene.classList.add('isSelected') ;
+                butonCesar.classList.add('notSelected'); 
+                butonXOR.classList.add('notSelected'); 
+                butonOne.classList.add('notSelected');  
+                metodUse = 2;
+                break;
+            case 3:
+                butonXOR.classList.add('isSelected');
+                butonCesar.classList.add('notSelected'); 
+                butonVigerene.classList.add('notSelected'); 
+                butonOne.classList.add('notSelected');
+                metodUse = 3;
+                break;
+            case 4:
+                butonOne.classList.add('isSelected');
+                butonCesar.classList.add('notSelected'); 
+                butonVigerene.classList.add('notSelected'); 
+                butonXOR.classList.add('notSelected');
+                metodUse = 4;
+                break;
+            default:
+                break;
+        }
+    
 }
 
 //Funcion para copiar en el portapapeles
@@ -137,7 +177,10 @@ function copy(text) {
 
 //Funcion que encripta según la necesidad
 function encriptarText(text, option) {
-    textDanger.classList.add('invisible');
+    const  advertencia = document.querySelector('#textDanger')
+    if(advertencia != null){
+        advertencia.style.display = 'none';
+    }
 
 
     let textEncrypt;
@@ -148,8 +191,10 @@ function encriptarText(text, option) {
         textEncrypt = option == 1 ? encryptCaesar(text, 5): decryptCaesar(text, 5);
     }else if(metodUse ==2){
         textEncrypt = option == 1? encryptVigenere(text, 'as'): decryptVigenere(text, 'as');
-    }else{
+    }else if (metodUse ==3){
         textEncrypt = option == 1? encryptXOR(text, '-'): decryptXOR(text, '-'); 
+    }else if (metodUse ==4){
+        textEncrypt = option == 1? OneEncript(text): OneDesencript(text);  // Este es un ejemplo, debe ser cambiado por el texto que deseas encriptar/desencriptar
     }
 
     textEncrypt = textEncrypt.replace(/\n/g, ' ');
@@ -171,6 +216,56 @@ function encriptarText(text, option) {
 
     result.innerHTML = elementHTML;
 }
+//Funcion de encriptado de ONE
+function OneEncript(text){
+    let t
+    t = text.split("");
+    for(let i=0; i< t.length; i++){
+      if(t[i] === 'a'){
+          t[i] = 'ai';
+      }
+      if(t[i] === 'e'){
+          t[i] = 'enter';
+      }
+      if(t[i] === 'i'){
+          t[i] = 'imes';
+      }
+      if(t[i] === 'o'){
+          t[i] = 'ober';
+      }
+      if(t[i] === 'u'){
+          t[i] = 'ufat';
+      }
+    }
+    return t.join("");
+  }
+  
+  
+  function OneDesencript(text) {
+      let palabra = '';
+      for (let i = 0; i < text.length; i++) {
+          if (text.substr(i, 2) === 'ai') {
+              palabra += 'a';
+              i += 1;
+          } else if (text.substr(i, 5) === 'enter') {
+              palabra += 'e';
+              i += 4;
+          } else if (text.substr(i, 4) === 'imes') {
+              palabra += 'i';
+              i += 3;
+          } else if (text.substr(i, 4) === 'ober') {
+              palabra += 'o';
+              i += 3;
+          } else if (text.substr(i, 4) === 'ufat') {
+              palabra += 'u';
+              i += 3;
+          } else {
+              palabra += text[i];
+          }
+      }
+      return palabra;
+  }
+
 //Funciones del encriptado de cesar
 function encryptCaesar(text, shift) {
     let result = '';
