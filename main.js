@@ -109,6 +109,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 //Funcion para Cambiar el metodo de encriptacion
+//Debo aclarar que habia hecho los otros antes por eso ONE quedo de último
 function metodEncriptar(option){
 
     const regex = /^[a-zA-Z0-9 .,]*$/;
@@ -186,7 +187,7 @@ function encriptarText(text, option) {
     let textEncrypt;
 
     
-
+    //Para los métdos de Cesar, Vigerenere y XOR se uso una 'llave' asignada desde la raíz para la encriptación
     if(metodUse == 1){
         textEncrypt = option == 1 ? encryptCaesar(text, 5): decryptCaesar(text, 5);
     }else if(metodUse ==2){
@@ -194,7 +195,7 @@ function encriptarText(text, option) {
     }else if (metodUse ==3){
         textEncrypt = option == 1? encryptXOR(text, '-'): decryptXOR(text, '-'); 
     }else if (metodUse ==4){
-        textEncrypt = option == 1? OneEncript(text): OneDesencript(text);  // Este es un ejemplo, debe ser cambiado por el texto que deseas encriptar/desencriptar
+        textEncrypt = option == 1? OneEncript(text): OneDesencript(text); 
     }
 
     textEncrypt = textEncrypt.replace(/\n/g, ' ');
@@ -344,7 +345,7 @@ function decryptVigenere(text, keyword) {
     return result;
 }
 
-// Encriptado XOR
+// Encriptado Ahora llamado Gady
 function encryptXOR(text, key) {
     let result = '';
     for (let i = 0; i < text.length; i++) {
